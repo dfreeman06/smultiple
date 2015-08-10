@@ -66,6 +66,11 @@
             scale = d3.scale.ordinal()
               .domain(vals)
               .range(vals.map(function(d, i){ return i * step; }));
+          default:
+            scale = d3.scale.linear()
+              .domain(d3.extent(vals))
+              .range([0, cellDim]);
+
         }
 
 
